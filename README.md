@@ -71,60 +71,37 @@ The above command will create two files into laravel livewire crud application, 
 
 /app/Models/Post.php
 /database/migrations/create_posts_table.php
-Now, find Post.php model file inside /app/Models directory. And open it then add the fillable property code into Post.php file, like following:
-
-<?php
-namespace App\Models;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
-class Post extends Model
-{
-    use HasFactory;
-    protected $fillable = [
-        'title', 'description'
-    ];
-}
-Then, find create_posts_table.php file inside /database/migrations/ directory. Then open this file and add the following code into function up() on this file:
-
-    public function up()
-    {
-        Schema::create('posts', function (Blueprint $table) {
-            $table->id();
-            $table->string('title');
-            $table->text('description');
-            $table->timestamps();
-        });
-    }
-Now, open again terminal and type the following command on cmd to create tables into selected database:
+Now, find Post.php model file inside /app/Models directory. And open it then add the fillable property code into Post.php file.
 
 
-php artisan migrate
- Create Routes
+Now, open again terminal and type the following command on cmd to create tables into selected database:.
+
+
+php artisan migrate.
+ Create Routes.
 Open web.php file, which is located inside routes directory. Then add the following routes into web.php file:
 
-use App\Http\Livewire\Posts;
-Route::get('posts', Posts::class);
-or ,else include your live wire in your welcome blade and change livewire in in livewire config files from layouts.app to welcome
-Installing Livewire Package
-Execute following command on command prompt to install livewire package in laravel 9 app:
+include your live wire in your welcome blade and change livewire in in livewire config files from layouts.app to welcome
+Installing Livewire Package.
+Execute following command on command prompt to install livewire package in laravel 9 app:.
 
-composer require livewire/livewire
+composer require livewire/livewire.
 Then install node js package:
 
-npm install
-Next run npm
+npm install.
+Next run npm.
 
 
-npm run dev
-Now, run database migration command:
+npm run dev.
+Now, run database migration command:.
 
-php artisan migrate
- Build Livewire Components
-Execute the following command on the command prompt to create livewire components in laravel 9 app:
+php artisan migrate.
+ Build Livewire Components.
+Execute the following command on the command prompt to create livewire components in laravel 9 app:.
 
-php artisan make:livewire posts
-The above command will create two files, which is located on the following locations:
+php artisan make:livewire posts.
+The above command will create two files, which is located on the following locations.
 
-app/Http/Livewire/Posts.php
+app/Http/Livewire/Posts.php.
 
-resources/views/livewire/posts.blade.php
+resources/views/livewire/posts.blade.php.
